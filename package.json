@@ -1,22 +1,70 @@
 {
-  "name": "about-me",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
-  },
+  "name": "deltagraph",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Albino Tonnina",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "start": "parcel src/index.html --no-cache",
+    "test": "jest",
+    "test:updateSnapshots": "jest --updateSnapshot",
+    "build": "parcel build src/index.html --no-cache --public-url ./ ",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist",
+    "eslint": "eslint ./src"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.7.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "^1.1.4",
+    "styled-components": "^3.2.6"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0"
+    "babel-eslint": "^8.2.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "gh-pages": "^1.1.0",
+    "jest": "^22.4.3",
+    "prettier": "^1.12.1"
   },
-  "homepage": "http://kien8995.github.io/about-me"
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/config/test.setup.js"
+  },
+  "keywords": [
+    "react",
+    "bootstrap",
+    "redux",
+    "react-router",
+    "express",
+    "hot loading",
+    "boilerplate"
+  ],
+  "repository": "kien8995/about-me",
+  "homepage": "http://kien8995.github.io/about-me",
+  "license": "MIT"
 }
